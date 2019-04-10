@@ -98,6 +98,19 @@ func (r *RPCClient) GetWork() ([]string, error) {
 	return reply, err
 }
 
+func (r *RPCClient) GetLatestBlock() (*GetBlockReplyPart, error) {
+	rpcResp, err := r.doPost(r.Url, "eth_getBlockByNumber", []interface{}{"latest", false})
+	if err != nil {
+		return nil, err
+	}
+	if rpcResp.Result != nil {
+		var reply *GetBlockReplyPart
+		err = json.Unmarshal(*rpcResp.Result, &reply)
+		return reply, err
+	}
+	return nil, nil
+}
+
 func (r *RPCClient) GetPendingBlock() (*GetBlockReplyPart, error) {
 	rpcResp, err := r.doPost(r.Url, "eth_getBlockByNumber", []interface{}{"pending", false})
 	if err != nil {
