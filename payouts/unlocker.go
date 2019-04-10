@@ -10,9 +10,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/math"
 
-	"github.com/sammy007/open-ethereum-pool/rpc"
-	"github.com/sammy007/open-ethereum-pool/storage"
-	"github.com/sammy007/open-ethereum-pool/util"
+	"github.com/hydnoracoin/pool/rpc"
+	"github.com/hydnoracoin/pool/storage"
+	"github.com/hydnoracoin/pool/util"
 )
 
 type UnlockerConfig struct {
