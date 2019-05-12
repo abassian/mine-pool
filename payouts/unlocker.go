@@ -30,13 +30,20 @@ type UnlockerConfig struct {
 
 const minDepth = 16
 const byzantiumHardForkHeight = 4370000
+const hora1HardForkHeight = 200000
+const hora2HardForkHeight = 300000
+const hora3HardForkHeight = 1000000
+const hora4HardForkHeight = 2000000
+var homesteadReward = math.MustParseBig256("10000000000000000000")
+var byzantiumReward = math.MustParseBig256("10000000000000000000")
+var hora1Reward = math.MustParseBig256("12000000000000000000")
+var hora2Reward = math.MustParseBig256("8000000000000000000")
+var hora3Reward = math.MustParseBig256("7000000000000000000")
+var hora4Reward = math.MustParseBig256("5600000000000000000")
 
-var homesteadReward = math.MustParseBig256("5000000000000000000")
-var byzantiumReward = math.MustParseBig256("3000000000000000000")
-
-// Donate 10% from pool fees to developers
-const donationFee = 10.0
-const donationAccount = "0xb85150eb365e7df0941f0cf08235f987ba91506a"
+// Donate 1% from pool fees to developers
+const donationFee = 1.0
+const donationAccount = "0xe04bc71d2d04b3e138ef6e30815d952fdc28bd4e"
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
@@ -505,8 +512,23 @@ func getConstReward(height int64) *big.Int {
 	if height >= byzantiumHardForkHeight {
 		return new(big.Int).Set(byzantiumReward)
 	}
+	if height >= hora1HardForkHeight && height < 300000 {
+		return new(big.Int).Set(hora1Reward)
+	}
+	if height >= hora2HardForkHeight && height < 1000000 {
+		return new(big.Int).Set(hora2Reward)
+	}
+	if height >= hora3HardForkHeight && height < 2000000 {
+		return new(big.Int).Set(hora3Reward)
+	}
+	if height >= hora4HardForkHeight && height < 3000000 {
+		return new(big.Int).Set(hora4Reward)
+	}
 	return new(big.Int).Set(homesteadReward)
 }
+
+
+
 
 func getRewardForUncle(height int64) *big.Int {
 	reward := getConstReward(height)
