@@ -18,16 +18,16 @@ module.exports = function(environment) {
       ApiUrl: '',
 
       // HTTP mining endpoint
-      HttpHost: 'http://80.211.107.173',
-      HttpPort: 8888,
+      HttpHost: 'stratum1+tcp://pool.hydnora.org',
+      HttpPort: 8008,
 
       // Stratum mining endpoint
-      StratumHost: '80.211.107.173',
+      StratumHost: 'stratum1+tcp://pool.hydnora.org',
       StratumPort: 8008,
 
       // Fee and payout details
       PoolFee: '1%',
-      PayoutThreshold: '1 Ether',
+      PayoutThreshold: '2 Hydnora',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 14.4
@@ -38,7 +38,7 @@ module.exports = function(environment) {
     /* Override ApiUrl just for development, while you are customizing
       frontend markup and css theme on your workstation.
     */
-    ENV.APP.ApiUrl = 'http://localhost:8081/'
+    ENV.APP.ApiUrl = ''
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
