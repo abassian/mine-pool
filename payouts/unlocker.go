@@ -46,7 +46,7 @@ var hora5Reward = math.MustParseBig256("4480000000000000000")
 
 // Donate 1% from pool fees to developers
 const donationFee = 1.0
-const donationAccount = "886eb504916d3038df2a56eaac710892d06f37bf"
+const donationAccount = "0x886eb504916d3038df2a56eaac710892d06f37bf"
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
