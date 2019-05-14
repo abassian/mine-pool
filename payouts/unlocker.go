@@ -38,7 +38,7 @@ const hora5HardForkHeight = 3000000
 
 var homesteadReward = math.MustParseBig256("10000000000000000000")
 var byzantiumReward = math.MustParseBig256("3580000000000000000")
-var hora1Reward = math.MustParseBig256("12000000000000000000")
+var hora1Reward = math.MustParseBig256("9000000000000000000")
 var hora2Reward = math.MustParseBig256("8000000000000000000")
 var hora3Reward = math.MustParseBig256("7000000000000000000")
 var hora4Reward = math.MustParseBig256("5600000000000000000")
