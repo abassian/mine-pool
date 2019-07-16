@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/abassian/ethash"
+	"github.com/edwinosky/ethash"
 	"github.com/ethereum/go-ethereum/common"
 )
 
