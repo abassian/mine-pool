@@ -2,15 +2,13 @@
   <div class="page-header">
     <h1>How To Mine</h1>
   </div>
-  <p class="lead">In order to mine on this pool you need to have an
-    <a href="https://github.com/ethereum/webthree-umbrella/releases" rel="nofollow" target="_blank">ethminer</a> installation
-    pointed to<br/><code>{{config.HttpHost}}:{{config.HttpPort}}/YOUR_ETH_ADDRESS/RIG_ID</code>
+  <p class="lead">download abassian miner
+    <a href="https://github.com/abassian/bna-progminer/releases" rel="nofollow" target="_blank">bna-progminer</a> installation
+    pointed to<br/><code>stratum1+tcp://pool.abassian.com/YOUR_ETH_ADDRESS/RIG_ID</code>
   </p>
   <dl class="dl-horizontal">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
+    <dt>YOUR_BNA_ADDRESS</dt>
+    <dd>This is your address for payouts, generate one with gbas
       <strong>Example:</strong> <code>0xb85150eb365e7df0941f0cf08235f987ba91506a</code>.
     </dd>
     <dt>RIG_ID</dt>
@@ -22,7 +20,7 @@
   </dl>
   <p>
     <strong>Full example:</strong>
-    <code>ethminer -F {{config.HttpHost}}:{{config.HttpPort}}/0xb85150eb365e7df0941f0cf08235f987ba91506a/myfarm -G --farm-recheck 200</code>.<br/>
+    <code>progminer.exe -P stratum1+tcp://0xb85150eb365e7df0941f0cf08235f987ba91506a.minerbna@pool.abassian.com:8008 </code>.<br/>
   </p>
 
   <h4>Terms of Service</h4>

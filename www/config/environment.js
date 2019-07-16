@@ -17,12 +17,12 @@ module.exports = function(environment) {
       // API host and port
       ApiUrl: '//pool.abassian.com/',
 
-      // HTTP mining endpoint
-      HttpHost: 'http://pool.abassian.com',
-      HttpPort: 8888,
+      // HTTP mining endpoint currently disabled
+      HttpHost: 'stratum1+tcp://pool.abassian.com',
+      HttpPort: 8008,
 
       // Stratum mining endpoint
-      StratumHost: 'pool.abassian.com',
+      StratumHost: 'stratum1+tcp://pool.abassian.com',
       StratumPort: 8008,
 
       // Fee and payout details
