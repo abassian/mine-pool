@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/abassian/go-abassian/common/math"
 
 	"github.com/sammy007/open-ethereum-pool/rpc"
 	"github.com/sammy007/open-ethereum-pool/storage"
@@ -30,15 +30,14 @@ type UnlockerConfig struct {
 
 const minDepth = 16
 const byzantiumHardForkHeight = 4370000
-const constantinopleHardForkHeight = 7280000
 
+var constReward = math.MustParseBig256("5000000000000000000")
 var homesteadReward = math.MustParseBig256("5000000000000000000")
 var byzantiumReward = math.MustParseBig256("3000000000000000000")
-var constantinopleReward = math.MustParseBig256("2000000000000000000")
 
 // Donate 10% from pool fees to developers
-const donationFee = 10.0
-const donationAccount = "0xb85150eb365e7df0941f0cf08235f987ba91506a"
+const donationFee = 0.0
+const donationAccount = ""
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
@@ -99,7 +98,7 @@ type UnlockResult struct {
  * Having very likely incorrect height in database results in a weird block unlocking scheme,
  * when I have to check what the hell we actually found and traversing all the blocks with height-N and height+N
  * to make sure we will find it. We can't rely on round height here, it's just a reference point.
- * ISSUE: https://github.com/ethereum/go-ethereum/issues/2333
+ * ISSUE: https://github.com/abassian/go-abassian/issues/2333
  */
 func (u *BlockUnlocker) unlockCandidates(candidates []*storage.BlockData) (*UnlockResult, error) {
 	result := &UnlockResult{}
@@ -255,7 +254,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		return
 	}
 
-	current, err := u.rpc.GetLatestBlock()
+	current, err := u.rpc.GetPendingBlock()
 	if err != nil {
 		u.halt = true
 		u.lastFail = err
@@ -353,7 +352,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		return
 	}
 
-	current, err := u.rpc.GetLatestBlock()
+	current, err := u.rpc.GetPendingBlock()
 	if err != nil {
 		u.halt = true
 		u.lastFail = err
@@ -504,13 +503,7 @@ func weiToShannonInt64(wei *big.Rat) int64 {
 }
 
 func getConstReward(height int64) *big.Int {
-	if height >= constantinopleHardForkHeight {
-		return new(big.Int).Set(constantinopleReward)
-	}
-	if height >= byzantiumHardForkHeight {
-		return new(big.Int).Set(byzantiumReward)
-	}
-	return new(big.Int).Set(homesteadReward)
+	return new(big.Int).Set(constReward)
 }
 
 func getRewardForUncle(height int64) *big.Int {

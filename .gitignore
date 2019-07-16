@@ -1,6 +1,9 @@
 .DS_Store
-config.json
 testnet.json
+config.prod.json
 
 /build/_workspace/
 /build/bin/
+
+
+docs.sto
