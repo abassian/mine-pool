@@ -1,7 +1,7 @@
-'use strict';
+/* jshint node: true */
 
 module.exports = function(environment) {
-  let ENV = {
+  var ENV = {
     modulePrefix: 'open-ethereum-pool',
     environment: environment,
     rootURL: '/',
@@ -15,19 +15,19 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '//example.net/',
+      ApiUrl: '//pool.abassian.com/',
 
       // HTTP mining endpoint
-      HttpHost: 'http://example.net',
+      HttpHost: 'http://pool.abassian.com',
       HttpPort: 8888,
 
       // Stratum mining endpoint
-      StratumHost: 'example.net',
+      StratumHost: 'pool.abassian.com',
       StratumPort: 8008,
 
       // Fee and payout details
-      PoolFee: '1%',
-      PayoutThreshold: '0.5 Ether',
+      PoolFee: '0%',
+      PayoutThreshold: '0.5 BNA',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 14.4
