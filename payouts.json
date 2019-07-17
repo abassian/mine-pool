@@ -1,6 +1,6 @@
 {
 	"threads": 2,
-	"coin": "nba",
+	"coin": "bna",
 	"name": "main",
 
 	"redis": {
