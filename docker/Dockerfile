@@ -19,7 +19,7 @@ RUN ln -s /opt/go-abassian/build/bin/gbas /usr/bin/gbas
 WORKDIR /opt
 
 RUN git config --global http.https://gopkg.in.followRedirects true
-RUN git clone --branch develop --single-branch https://github.com/abassian/mine-pool.git open-ethereum-pool
+RUN git clone --branch rpool --single-branch https://github.com/abassian/mine-pool.git open-ethereum-pool
 
 WORKDIR /opt/open-ethereum-pool
 
