@@ -1,9 +1,9 @@
 <div class="jumbotron">
   <div class="container">
-    <div class="row hora">
+    <div class="row">
       <div class="col-md-5">
         <h1 style="font-size: 24px">
-          <strong>Hydnora ProgPow Pool</strong>
+          <strong>Open Abassian Pool</strong>
         </h1>
         <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts run twice per day.<br/>
         <span class="label label-success">PROP</span> Stable and profitable pool with regular payouts.
@@ -30,7 +30,7 @@
   <div class="stats">
     <h4>Your Stats &amp; Payment History</h4>
     <div class="input-group">
-      {{input value=cachedLogin class="form-control" placeholder="Enter Your Hydnora Address"}}
+      {{input value=cachedLogin class="form-control" placeholder="Enter Your Abassian Address"}}
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
           <span style="display: inline;"><i class="fa fa-search"></i> Lookup</span>
@@ -41,14 +41,7 @@
   <div>
     <hr/>
     <h4 class="note note-info text-center">
-      progminer.exe -P stratum1+tcp://adress.worker@pool.hydnora.org:8008
-	  
+      progminer.exe -P stratum1+tcp://your_wallet.your_worker@poll.abassian.com:8008
     </h4>
   </div>
-	<div>
-	<h4 class="note note-info text-center">
-      progminer.exe -P stratum1+tcp://adress.worker@progpow.hydnora.org:8008
-	  
-    </h4>
-   </div>
 </div>
