@@ -11,6 +11,8 @@ services:
       - redis
     volumes:
       - /root/.abassian/mainnet:/root/.abassian/mainnet
+      - /root/mine-pool/config.json:/opt/open-ethereum-pool/config.json
+      - /root/mine-pool/payouts.json:/opt/open-ethereum-pool/payouts.json
     environment:
       - VIRTUAL_HOST=pool.abassian.com
       - WALLET_PASSWORD_FILE_PATH=/root/.abassian/mainnet/password
