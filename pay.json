@@ -105,9 +105,6 @@
 		"bgsave": false
 	},
 
-
-
-
 	"newrelicEnabled": false,
 	"newrelicName": "MyEtherProxy",
 	"newrelicKey": "SECRET_KEY",
