@@ -1,4 +1,4 @@
-//'use strict';
+/* jshint node: true */
 
 module.exports = function(environment) {
   var ENV = {
@@ -15,19 +15,19 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '',
+      ApiUrl: '//pool.abassian.com/',
 
-      // HTTP mining endpoint
-      HttpHost: 'stratum1+tcp://pool.hydnora.org',
+      // HTTP mining endpoint currently disabled
+      HttpHost: 'stratum1+tcp://pool.abassian.com',
       HttpPort: 8008,
 
       // Stratum mining endpoint
-      StratumHost: 'stratum1+tcp://pool.hydnora.org',
+      StratumHost: 'stratum1+tcp://pool.abassian.com',
       StratumPort: 8008,
 
       // Fee and payout details
-      PoolFee: '1%',
-      PayoutThreshold: '2 Hydnora',
+      PoolFee: '0%',
+      PayoutThreshold: '0.5 BNA',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 14.4
@@ -38,7 +38,7 @@ module.exports = function(environment) {
     /* Override ApiUrl just for development, while you are customizing
       frontend markup and css theme on your workstation.
     */
-    ENV.APP.ApiUrl = ''
+    ENV.APP.ApiUrl = 'http://localhost:8081/'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/hydnoracoin/pool/rpc"
-	"github.com/hydnoracoin/pool/storage"
+	"github.com/sammy007/open-ethereum-pool/rpc"
+	"github.com/sammy007/open-ethereum-pool/storage"
 )
 
 func TestMain(m *testing.M) {

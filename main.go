@@ -13,10 +13,10 @@ import (
 
 	"github.com/yvasiyarov/gorelic"
 
-	"github.com/hydnoracoin/pool/api"
-	"github.com/hydnoracoin/pool/payouts"
-	"github.com/hydnoracoin/pool/proxy"
-	"github.com/hydnoracoin/pool/storage"
+	"github.com/sammy007/open-ethereum-pool/api"
+	"github.com/sammy007/open-ethereum-pool/payouts"
+	"github.com/sammy007/open-ethereum-pool/proxy"
+	"github.com/sammy007/open-ethereum-pool/storage"
 )
 
 var cfg proxy.Config

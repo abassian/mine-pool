@@ -8,11 +8,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/abassian/go-abassian/common/math"
 
-	"github.com/hydnoracoin/pool/rpc"
-	"github.com/hydnoracoin/pool/storage"
-	"github.com/hydnoracoin/pool/util"
+	"github.com/sammy007/open-ethereum-pool/rpc"
+	"github.com/sammy007/open-ethereum-pool/storage"
+	"github.com/sammy007/open-ethereum-pool/util"
 )
 
 type UnlockerConfig struct {
@@ -29,24 +29,15 @@ type UnlockerConfig struct {
 }
 
 const minDepth = 16
-const byzantiumHardForkHeight = 4000000
-const hora1HardForkHeight = 200000
-const hora2HardForkHeight = 300000
-const hora3HardForkHeight = 1000000
-const hora4HardForkHeight = 2000000
-const hora5HardForkHeight = 3000000
+const byzantiumHardForkHeight = 4370000
 
-var homesteadReward = math.MustParseBig256("10000000000000000000")
-var byzantiumReward = math.MustParseBig256("3580000000000000000")
-var hora1Reward = math.MustParseBig256("9000000000000000000")
-var hora2Reward = math.MustParseBig256("8000000000000000000")
-var hora3Reward = math.MustParseBig256("7000000000000000000")
-var hora4Reward = math.MustParseBig256("5600000000000000000")
-var hora5Reward = math.MustParseBig256("4480000000000000000")
+var constReward = math.MustParseBig256("5000000000000000000")
+var homesteadReward = math.MustParseBig256("5000000000000000000")
+var byzantiumReward = math.MustParseBig256("3000000000000000000")
 
-// Donate 1% from pool fees to developers
-const donationFee = 1.0
-const donationAccount = "0x886eb504916d3038df2a56eaac710892d06f37bf"
+// Donate 10% from pool fees to developers
+const donationFee = 0.0
+const donationAccount = ""
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
@@ -107,7 +98,7 @@ type UnlockResult struct {
  * Having very likely incorrect height in database results in a weird block unlocking scheme,
  * when I have to check what the hell we actually found and traversing all the blocks with height-N and height+N
  * to make sure we will find it. We can't rely on round height here, it's just a reference point.
- * ISSUE: https://github.com/ethereum/go-ethereum/issues/2333
+ * ISSUE: https://github.com/abassian/go-abassian/issues/2333
  */
 func (u *BlockUnlocker) unlockCandidates(candidates []*storage.BlockData) (*UnlockResult, error) {
 	result := &UnlockResult{}
@@ -512,30 +503,8 @@ func weiToShannonInt64(wei *big.Rat) int64 {
 }
 
 func getConstReward(height int64) *big.Int {
-	if height >= byzantiumHardForkHeight {
-		return new(big.Int).Set(byzantiumReward)
-	}
-	if height >= hora5HardForkHeight  {
-		return new(big.Int).Set(hora5Reward)
-	}
-	if height >= hora4HardForkHeight  {
-		return new(big.Int).Set(hora4Reward)
-	}
-	if height >= hora3HardForkHeight  {
-		return new(big.Int).Set(hora3Reward)
-	}
-	if height >= hora2HardForkHeight  {
-		return new(big.Int).Set(hora2Reward)
-	}
-	if height >= hora1HardForkHeight {
-		return new(big.Int).Set(hora1Reward)
-	}
-	
-	return new(big.Int).Set(homesteadReward)
+	return new(big.Int).Set(constReward)
 }
-	
-
-
 
 func getRewardForUncle(height int64) *big.Int {
 	reward := getConstReward(height)

@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/hydnoracoin/pool/api"
-	"github.com/hydnoracoin/pool/payouts"
-	"github.com/hydnoracoin/pool/policy"
-	"github.com/hydnoracoin/pool/storage"
+	"github.com/sammy007/open-ethereum-pool/api"
+	"github.com/sammy007/open-ethereum-pool/payouts"
+	"github.com/sammy007/open-ethereum-pool/policy"
+	"github.com/sammy007/open-ethereum-pool/storage"
 )
 
 type Config struct {
