@@ -1,6 +1,6 @@
 {
 	"threads": 2,
-	"coin": "eth",
+	"coin": "bna",
 	"name": "main",
 
 	"proxy": {
@@ -104,9 +104,9 @@
 		"threshold": 5000000000,
 		"bgsave": false
 	},
-	
 
-	
+
+
 
 	"newrelicEnabled": false,
 	"newrelicName": "MyEtherProxy",
