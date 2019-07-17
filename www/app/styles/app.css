@@ -51,7 +51,7 @@ code {
 }
 
 .navbar-default {
-	background-color: #734d13;
+	background-color: #04191f;
 	border-color: #69102b;
 }
 .navbar-default .navbar-brand {
@@ -175,22 +175,4 @@ h4.note {
 }
 .stats > div > span:first-of-type{
 	font-weight: bold;
-}
-.hora {
-	color: #f7f6f6;
-    background-color: rgba(0,0,0,.5);
-    /* border-color: #dcb2b2; */
-    border-radius: 10px;
-}
-.table {
-	    color: #0510a3;
-    background-color: rgba(213, 159, 12, 0.5);
-    background-color: #bdf3ae8f;
-    border-radius: 10px;
-}
-.minergif {
-	position: fixed;
-    bottom: 345px;
-    left: 20px;
-    top: 30px;
 }
