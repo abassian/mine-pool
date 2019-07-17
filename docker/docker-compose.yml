@@ -5,6 +5,10 @@ services:
     ports:
       - 8008:8008
       - 80:80
+    depends_on:
+      - redis
+    links:
+      - redis
     volumes:
       - /root/.abassian/mainnet:/root/.abassian/mainnet
     environment:
