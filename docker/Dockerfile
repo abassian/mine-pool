@@ -41,9 +41,11 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY pool.conf /etc/security/limits.d/pool.conf
 COPY payouts.sh /payouts.sh
 COPY pool.sh /pool.sh
+COPY pool_4b.sh /pool_4b.sh
+COPY pool_9b.sh /pool_9b.sh
 COPY gbas.sh /gbas.sh
 
-RUN chmod a+x /payouts.sh && chmod a+x /pool.sh && chmod a+x /gbas.sh
+RUN chmod a+x /payouts.sh && chmod a+x /pool.sh && chmod a+x /gbas.sh && chmod a+x /pool_4b.sh && chmod a+x /pool_9b.sh
 
 CMD ["/usr/bin/supervisord"]
 
