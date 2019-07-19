@@ -12,6 +12,8 @@ services:
     volumes:
       - /root/.abassian/mainnet:/root/.abassian/mainnet
       - ../config.json:/opt/open-ethereum-pool/config.json
+      - ../config_4b.json:/opt/open-ethereum-pool/config_4b.json
+      - ../config_9b.json:/opt/open-ethereum-pool/config_9b.json
       - ../payouts.json:/opt/open-ethereum-pool/payouts.json
     environment:
       - VIRTUAL_HOST=pool.abassian.com
