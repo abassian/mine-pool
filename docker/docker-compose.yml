@@ -4,6 +4,8 @@ services:
     build: .
     ports:
       - 8008:8008
+      - 8078:8078
+      - 8068:8068
       - 80:80
     depends_on:
       - redis

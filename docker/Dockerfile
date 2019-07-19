@@ -51,4 +51,4 @@ CMD ["/usr/bin/supervisord"]
 
 # VOLUME ["/root/.abassian"]
 
-EXPOSE 8008 80
+EXPOSE 8008 8068 8078 80
